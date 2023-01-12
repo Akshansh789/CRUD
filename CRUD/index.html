@@ -1,29 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD</title>
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-
+    <title>
+        Html CRUD with Pure JavaScript
+    </title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div id="form" class="border p-5 rounded">
+    <table>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div>
+                        <label>Full Name*</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                        <input type="text" name="fullName" id="fullName">
+                    </div>
+                    <div>
+                        <label>EMP Code</label>
+                        <input type="text" name="empCode" id="empCode">
+                    </div>
+                    <div>
+                        <label>Salary</label>
+                        <input type="text" name="salary" id="salary">
+                    </div>
+                    <div>
+                        <label>City</label>
+                        <input type="text" name="city" id="city">
+                    </div>
+                    <div  class="form-action-buttons">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="employeeList">
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>EMP Code</th>
+                            <th>Salary</th>
+                            <th>City</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-    </div>
-    <div id="table" class="container-fluid">
-
-    </div>
-
-
-    <script src="./index.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
 </body>
 
 </html>
